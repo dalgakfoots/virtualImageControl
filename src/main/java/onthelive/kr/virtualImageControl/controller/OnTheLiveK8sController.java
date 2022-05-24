@@ -30,6 +30,20 @@ public class OnTheLiveK8sController {
         return servicePerPodList;
     }
 
+    @GetMapping("/services/{serviceName}")
+    public ServicePerPod getService(@PathVariable String serviceName) {
+        List<ServicePerPod> servicePerPodList = onTheLiveK8sService.getServicePerPodList();
+        ServicePerPod servicePerPod = servicePerPodList
+                .stream()
+                .filter(e -> e.getServiceName().equals(serviceName))
+                .findFirst()
+                .get();
+
+        servicePerPod.setAccessUrl(baseUrl);
+
+        return servicePerPod;
+    }
+
     @PostMapping("/services/create")
     public ServicePerPod createService() {
         ServicePerPod servicePerPod = onTheLiveK8sService.createServicePerPod();
@@ -39,7 +53,7 @@ public class OnTheLiveK8sController {
 
     @DeleteMapping("/services/delete")
     public ResponseEntity deleteService(@RequestParam(value = "serviceName") String serviceName,
-                                    @RequestParam(value = "deploymentName") String deploymentName) {
+                                        @RequestParam(value = "deploymentName") String deploymentName) {
 
         onTheLiveK8sService.deleteServicePerPod(serviceName, deploymentName);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
