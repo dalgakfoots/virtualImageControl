@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/apis/v1")
+@RequestMapping("/apis/v1/k8s")
 public class OnTheLiveK8sController {
 
     @Value("${kubernetes.master.url}")
@@ -20,7 +20,7 @@ public class OnTheLiveK8sController {
 
     private final OnTheLiveK8sService onTheLiveK8sService;
 
-    @GetMapping("/k8s/services")
+    @GetMapping("/services")
     public List<ServicePerPod> getList() {
         List<ServicePerPod> servicePerPodList = onTheLiveK8sService.getServicePerPodList();
         servicePerPodList.forEach(
@@ -30,14 +30,14 @@ public class OnTheLiveK8sController {
         return servicePerPodList;
     }
 
-    @PostMapping("/k8s/services/create")
+    @PostMapping("/services/create")
     public ServicePerPod createService() {
         ServicePerPod servicePerPod = onTheLiveK8sService.createServicePerPod();
         servicePerPod.setAccessUrl(baseUrl);
         return servicePerPod;
     }
 
-    @DeleteMapping("/k8s/services/delete")
+    @DeleteMapping("/services/delete")
     public ResponseEntity deleteService(@RequestParam(value = "serviceName") String serviceName,
                                     @RequestParam(value = "deploymentName") String deploymentName) {
 
