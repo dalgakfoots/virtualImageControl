@@ -8,6 +8,7 @@ import io.fabric8.kubernetes.client.DefaultKubernetesClient;
 import io.fabric8.kubernetes.client.KubernetesClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import onthelive.kr.virtualImageControl.common.RandomStringUtil;
 import onthelive.kr.virtualImageControl.model.ServicePerPod;
 import onthelive.kr.virtualImageControl.model.support.NumberSupporter;
 import org.springframework.beans.factory.annotation.Value;
@@ -100,6 +101,7 @@ public class OnTheLiveK8sService {
                     .selector(Collections.singletonMap("app",selectorValuePrefix+nextNumber))
                     .deploymentName(deploymentNamePrefix+nextNumber)
                     .portNumber(nextPortNumber)
+                    .secret(RandomStringUtil.randomAlphaNumeric(32))
                     .build();
         } catch (Exception e) {
             e.printStackTrace();

@@ -19,6 +19,8 @@ public class ServicePerPod {
 
     private String accessUrl;
 
+    private String secret;
+
     public String getAccessUrl() {
         return accessUrl;
     }
