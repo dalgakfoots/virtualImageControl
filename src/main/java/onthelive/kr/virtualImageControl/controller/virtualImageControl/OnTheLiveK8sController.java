@@ -1,8 +1,8 @@
-package onthelive.kr.virtualImageControl.controller;
+package onthelive.kr.virtualImageControl.controller.virtualImageControl;
 
 import lombok.RequiredArgsConstructor;
-import onthelive.kr.virtualImageControl.model.ServicePerPod;
-import onthelive.kr.virtualImageControl.service.OnTheLiveK8sService;
+import onthelive.kr.virtualImageControl.model.virtualImageControl.ServicePerPod;
+import onthelive.kr.virtualImageControl.service.virtualImageControl.OnTheLiveK8sService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

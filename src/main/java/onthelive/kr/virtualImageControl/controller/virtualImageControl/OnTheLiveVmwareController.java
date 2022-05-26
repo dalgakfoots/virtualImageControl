@@ -1,9 +1,8 @@
-package onthelive.kr.virtualImageControl.controller;
+package onthelive.kr.virtualImageControl.controller.virtualImageControl;
 
 import lombok.RequiredArgsConstructor;
-import onthelive.kr.virtualImageControl.model.VmInfo;
-import onthelive.kr.virtualImageControl.service.OnTheLiveVmwareService;
-import org.apache.ibatis.annotations.Delete;
+import onthelive.kr.virtualImageControl.model.virtualImageControl.VmInfo;
+import onthelive.kr.virtualImageControl.service.virtualImageControl.OnTheLiveVmwareService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

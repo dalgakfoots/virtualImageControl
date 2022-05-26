@@ -1,4 +1,4 @@
-package onthelive.kr.virtualImageControl.model;
+package onthelive.kr.virtualImageControl.model.virtualImageControl;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

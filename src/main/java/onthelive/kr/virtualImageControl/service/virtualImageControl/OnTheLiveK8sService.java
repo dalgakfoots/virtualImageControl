@@ -1,15 +1,14 @@
-package onthelive.kr.virtualImageControl.service;
+package onthelive.kr.virtualImageControl.service.virtualImageControl;
 
 import io.fabric8.kubernetes.api.model.*;
 import io.fabric8.kubernetes.api.model.apps.Deployment;
 import io.fabric8.kubernetes.api.model.apps.DeploymentBuilder;
-import io.fabric8.kubernetes.api.model.apps.DeploymentList;
 import io.fabric8.kubernetes.client.DefaultKubernetesClient;
 import io.fabric8.kubernetes.client.KubernetesClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import onthelive.kr.virtualImageControl.common.RandomStringUtil;
-import onthelive.kr.virtualImageControl.model.ServicePerPod;
+import onthelive.kr.virtualImageControl.model.virtualImageControl.ServicePerPod;
 import onthelive.kr.virtualImageControl.model.support.NumberSupporter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
